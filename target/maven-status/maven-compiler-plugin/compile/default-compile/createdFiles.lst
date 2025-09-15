@@ -1,0 +1,4 @@
+com\codenbugs\sistemacongresos\resources\JakartaEE10Resource.class
+com\codenbugs\sistemacongresos\JakartaRestConfiguration.class
+com\codenbugs\sistemacongresos\util\DBConnection.class
+com\codenbugs\sistemacongresos\SistemaCongresos.class
