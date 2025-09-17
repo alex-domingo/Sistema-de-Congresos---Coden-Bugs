@@ -1,4 +1,6 @@
 com\codenbugs\sistemacongresos\resources\JakartaEE10Resource.class
 com\codenbugs\sistemacongresos\JakartaRestConfiguration.class
+com\codenbugs\sistemacongresos\dao\UsuarioDAO.class
 com\codenbugs\sistemacongresos\util\DBConnection.class
+com\codenbugs\sistemacongresos\modelos\Usuario.class
 com\codenbugs\sistemacongresos\SistemaCongresos.class
