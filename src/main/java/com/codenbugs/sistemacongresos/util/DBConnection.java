@@ -12,11 +12,16 @@ public class DBConnection {
     public static final String USER_NAME = "root";
     public static final String PASSWORD = "7777";
 
-    public static final String URL = "jdbc:mysql://"
-            + IP + ":" + PUERTO + "/" + SCHEMA;
+    public static final String URL = "jdbc:mysql://" + IP + ":" + PUERTO + "/" + SCHEMA
+            + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Guatemala";
 
-    public static final String URL_FATAL = "jdbc:mysql://"
-            + IP + ":" + PUERTO + "/" + SCHEMA + "?allowMultiQueries=true";
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException("No se encontró el driver MySQL en el classpath", e);
+        }
+    }
 
     public void connect() {
         System.out.println("URL de conexion: " + URL);

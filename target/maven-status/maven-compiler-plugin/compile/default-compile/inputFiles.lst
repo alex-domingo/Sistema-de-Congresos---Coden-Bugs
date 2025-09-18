@@ -1,6 +1,13 @@
-C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\util\DBConnection.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\AdminDashboardServlet.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\dao\UsuarioDAO.java
-C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\modelos\Usuario.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\LoginServlet.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\resources\JakartaEE10Resource.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\util\DBConnection.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\filtros\AuthFilter.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\modelos\Usuario.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\ParticipanteDashboardServlet.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\SistemaCongresos.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\OrganizadorDashboardServlet.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\JakartaRestConfiguration.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\servicios\UsuarioServicio.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\LogoutServlet.java
