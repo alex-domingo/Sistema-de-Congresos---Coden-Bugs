@@ -1,6 +1,13 @@
 com\codenbugs\sistemacongresos\resources\JakartaEE10Resource.class
-com\codenbugs\sistemacongresos\JakartaRestConfiguration.class
+com\codenbugs\sistemacongresos\controladores\LoginServlet.class
 com\codenbugs\sistemacongresos\dao\UsuarioDAO.class
+com\codenbugs\sistemacongresos\controladores\OrganizadorDashboardServlet.class
+com\codenbugs\sistemacongresos\filtros\AuthFilter.class
 com\codenbugs\sistemacongresos\util\DBConnection.class
+com\codenbugs\sistemacongresos\controladores\ParticipanteDashboardServlet.class
+com\codenbugs\sistemacongresos\JakartaRestConfiguration.class
+com\codenbugs\sistemacongresos\servicios\UsuarioServicio.class
+com\codenbugs\sistemacongresos\controladores\AdminDashboardServlet.class
+com\codenbugs\sistemacongresos\controladores\LogoutServlet.class
 com\codenbugs\sistemacongresos\modelos\Usuario.class
 com\codenbugs\sistemacongresos\SistemaCongresos.class
