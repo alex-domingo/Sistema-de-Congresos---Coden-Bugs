@@ -1,6 +1,7 @@
 com\codenbugs\sistemacongresos\resources\JakartaEE10Resource.class
 com\codenbugs\sistemacongresos\controladores\LoginServlet.class
 com\codenbugs\sistemacongresos\dao\UsuarioDAO.class
+com\codenbugs\sistemacongresos\dao\AdministradorInstitucionDAO.class
 com\codenbugs\sistemacongresos\controladores\OrganizadorDashboardServlet.class
 com\codenbugs\sistemacongresos\filtros\AuthFilter.class
 com\codenbugs\sistemacongresos\util\DBConnection.class

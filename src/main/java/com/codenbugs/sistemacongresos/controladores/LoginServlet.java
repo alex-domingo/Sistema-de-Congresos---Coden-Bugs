@@ -1,5 +1,6 @@
 package com.codenbugs.sistemacongresos.controladores;
 
+import com.codenbugs.sistemacongresos.dao.AdministradorInstitucionDAO;
 import com.codenbugs.sistemacongresos.dao.UsuarioDAO;
 import com.codenbugs.sistemacongresos.modelos.Usuario;
 import com.codenbugs.sistemacongresos.servicios.UsuarioServicio;
@@ -20,7 +21,8 @@ public class LoginServlet extends HttpServlet {
     public void init() throws ServletException {
         DBConnection db = new DBConnection();
         UsuarioDAO usuarioDAO = new UsuarioDAO(db);
-        this.usuarioServicio = new UsuarioServicio(usuarioDAO);
+        AdministradorInstitucionDAO adminInstDAO = new AdministradorInstitucionDAO(db);
+        this.usuarioServicio = new UsuarioServicio(usuarioDAO, adminInstDAO);
     }
 
     @Override
@@ -43,20 +45,11 @@ public class LoginServlet extends HttpServlet {
                 req.getRequestDispatcher("/vistas/auth/login.jsp").forward(req, resp);
                 return;
             }
-
             HttpSession sesion = req.getSession(true);
             sesion.setAttribute("usuario", u);
 
-            // Redirección por rol (admin sistema vs organizador vs participante)
-            if (u.isEsAdministradorSistema()) {
-                resp.sendRedirect(req.getContextPath() + "/admin/dashboard");
-            } else {
-                /*
-                Aquí podremos decidir si el usuario es organizador (admin de institución) o participante,
-                de momento, si no es admin del sistema, lo enviamos a "organizador"
-                 */
-                resp.sendRedirect(req.getContextPath() + "/organizador/dashboard");
-            }
+            String destino = usuarioServicio.homePath(u); // admin, organizador o participante
+            resp.sendRedirect(req.getContextPath() + destino);
         } catch (Exception e) {
             throw new ServletException("Error durante login", e);
         }
