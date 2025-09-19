@@ -12,7 +12,7 @@
         <p><a href="<%=request.getContextPath()%>/auth/logout">Salir</a></p>
 
         <ul>
-            <li><a href="#">Instituciones</a></li>
+            <li><a href="<%=request.getContextPath()%>/admin/instituciones">Instituciones</a></li>
             <li><a href="#">Usuarios</a></li>
             <li><a href="#">Configuración (Comisión)</a></li>
             <li><a href="#">Reportes</a></li>
