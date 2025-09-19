@@ -12,7 +12,7 @@
         <p><a href="<%=request.getContextPath()%>/auth/logout">Salir</a></p>
 
         <ul>
-            <li><a href="#">Mis Congresos</a></li>
+            <li><a href="<%=request.getContextPath()%>/organizador/congresos">Mis Congresos</a></li>
             <li><a href="#">Salones & Actividades</a></li>
             <li><a href="#">Convocatorias & Trabajos</a></li>
             <li><a href="#">Reportes del Congreso</a></li>
