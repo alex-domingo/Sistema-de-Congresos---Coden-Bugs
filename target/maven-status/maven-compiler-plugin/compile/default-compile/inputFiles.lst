@@ -2,10 +2,17 @@ C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\cod
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\dao\UsuarioDAO.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\LoginServlet.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\resources\JakartaEE10Resource.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\dao\InstitucionDAO.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\modelos\Institucion.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\instituciones\CrearInstitucionServlet.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\util\DBConnection.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\filtros\AuthFilter.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\modelos\Usuario.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\servicios\InstitucionServicio.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\ParticipanteDashboardServlet.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\instituciones\CambiarEstadoInstitucionServlet.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\instituciones\EditarInstitucionServlet.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\instituciones\ListarInstitucionesServlet.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\SistemaCongresos.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\OrganizadorDashboardServlet.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\dao\AdministradorInstitucionDAO.java
