@@ -13,7 +13,8 @@
 
         <ul>
             <li><a href="<%=request.getContextPath()%>/organizador/congresos">Mis Congresos</a></li>
-            <li><a href="#">Salones & Actividades</a></li>
+            <li><a href="<%=request.getContextPath()%>/organizador/salones">Salones</a></li>
+            <li><a href="<%=request.getContextPath()%>/organizador/actividades">Actividades</a></li>
             <li><a href="#">Convocatorias & Trabajos</a></li>
             <li><a href="#">Reportes del Congreso</a></li>
         </ul>
