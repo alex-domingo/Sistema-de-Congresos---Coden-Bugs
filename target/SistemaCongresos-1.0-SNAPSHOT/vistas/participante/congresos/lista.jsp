@@ -22,28 +22,22 @@
         <% if (err != null) { %><div style="color:red;"><%= err %></div><% } %>
 
         <table border="1" cellpadding="6" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Título</th><th>Fechas</th><th>Precio (GTQ)</th><th>Ubicación</th><th>Acción</th>
-                </tr>
-            </thead>
             <tbody>
                 <% if (congresos != null) {
-       for (Congreso c : congresos) { %>
-                <tr>
-                    <td><%= c.getTitulo() %></td>
-                    <td><%= c.getFechaInicio() %> → <%= c.getFechaFin() %></td>
-                    <td><%= c.getPrecio() %></td>
-                    <td><%= c.getUbicacion() %></td>
-                    <td>
-                        <form method="post" action="<%=request.getContextPath()%>/participante/congresos/inscribir" style="display:inline">
-                            <input type="hidden" name="congreso_id" value="<%= c.getId() %>" />
-                            <button type="submit">Inscribirme</button>
-                        </form>
-                    </td>
-                </tr>
-                <% } } %>
-            </tbody>
-        </table>
-    </body>
+     for (Congreso c : congresos) { %>
+            <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+                <h3><%= c.getTitulo() %></h3>
+                <p><b>Descripción:</b> <%= c.getDescripcion()!=null ? c.getDescripcion() : "Sin descripción" %></p>
+                <p><b>Fechas:</b> <%= c.getFechaInicio() %> → <%= c.getFechaFin() %></p>
+                <p><b>Precio:</b> Q<%= c.getPrecio() %></p>
+                <p><b>Ubicación:</b> <%= c.getUbicacion() %></p>
+                <form method="post" action="<%=request.getContextPath()%>/participante/congresos/inscribir">
+                    <input type="hidden" name="congreso_id" value="<%= c.getId() %>" />
+                    <button type="submit">Inscribirme</button>
+                </form>
+            </div>
+            <% } } %>
+        </tbody>
+    </table>
+</body>
 </html>
