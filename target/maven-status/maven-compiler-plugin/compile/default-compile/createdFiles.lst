@@ -1,5 +1,6 @@
 com\codenbugs\sistemacongresos\controladores\salones\ListarSalonesServlet.class
 com\codenbugs\sistemacongresos\controladores\congresos\EditarCongresoServlet.class
+com\codenbugs\sistemacongresos\controladores\usuario\UsuarioFotoServlet.class
 com\codenbugs\sistemacongresos\controladores\salones\SalonesPorCongresoServlet.class
 com\codenbugs\sistemacongresos\dao\CongresoPublicoDAO.class
 com\codenbugs\sistemacongresos\dao\InstitucionDAO.class
