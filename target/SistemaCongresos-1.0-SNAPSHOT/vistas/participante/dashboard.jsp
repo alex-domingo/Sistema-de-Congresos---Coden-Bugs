@@ -14,7 +14,8 @@
         <ul>
             <li><a href="<%=request.getContextPath()%>/participante/congresos">Explorar Congresos</a></li>
             <li><a href="#">Mis Inscripciones</a></li>
-            <li><a href="#">Mis Reservas de Taller</a></li>
+            <li><a href="<%=request.getContextPath()%>/participante/talleres">Explorar talleres</a></li>
+            <li><a href="<%=request.getContextPath()%>/participante/talleres/mis">Mis reservas de taller</a></li>
             <li><a href="#">Mis Diplomas</a></li>
         </ul>
     </body>
