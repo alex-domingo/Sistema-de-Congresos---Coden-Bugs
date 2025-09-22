@@ -30,11 +30,13 @@ public class ActividadPublicaDAO {
         return a;
     }
 
-    // Listamos los talleres de congresos activos (orden por fecha/hora)
-    public List<Actividad> listarTalleresDisponibles() throws Exception {
+    /*
+    Listamos todas las actividades (ponencias y talleres) de congresos activos
+     */
+    public List<Actividad> listarActividadesDisponibles() throws Exception {
         String sql = "SELECT a.* FROM actividades a "
                 + "JOIN congresos c ON c.id = a.congreso_id "
-                + "WHERE a.tipo_actividad='TALLER' AND c.activo=TRUE "
+                + "WHERE c.activo = TRUE "
                 + "ORDER BY a.fecha_hora_inicio ASC";
         try (Connection cn = DB.getConnection(); PreparedStatement ps = cn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
             List<Actividad> out = new ArrayList<>();
@@ -45,11 +47,13 @@ public class ActividadPublicaDAO {
         }
     }
 
-    // Obtenemos un taller por id si pertenece a un congreso activo
-    public Actividad buscarTallerActivoPorId(int actividadId) throws Exception {
+    /*
+    Obtenemos una actividad (sea taller o ponencia) si su congreso está activo
+     */
+    public Actividad buscarActividadActivaPorId(int actividadId) throws Exception {
         String sql = "SELECT a.* FROM actividades a "
                 + "JOIN congresos c ON c.id = a.congreso_id "
-                + "WHERE a.id=? AND a.tipo_actividad='TALLER' AND c.activo=TRUE";
+                + "WHERE a.id=? AND c.activo=TRUE";
         try (Connection cn = DB.getConnection(); PreparedStatement ps = cn.prepareStatement(sql)) {
             ps.setInt(1, actividadId);
             try (ResultSet rs = ps.executeQuery()) {

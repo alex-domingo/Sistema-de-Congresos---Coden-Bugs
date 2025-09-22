@@ -20,34 +20,39 @@ public class ReservaTallerServicio {
     }
 
     /*
-    Reservamos un taller si hay cupo y no existe reserva previa
+    Registramos inscripción a actividad, si es PONENCIA: sin cupo (solo evitamos
+    duplicados), si es TALLER: validamos cupo_maximo y evitamos duplicados
      */
     public void reservar(int userId, int actividadId) throws Exception {
         try (Connection cn = DB.getConnection()) {
             cn.setAutoCommit(false);
             try {
-                // 1) Verificamos que sea taller en congreso activo
-                Actividad a = ACTIVIDAD_DAO.buscarTallerActivoPorId(actividadId);
+                // 1) Actividad válida y congreso activo
+                Actividad a = ACTIVIDAD_DAO.buscarActividadActivaPorId(actividadId);
                 if (a == null) {
-                    throw new IllegalArgumentException("Taller no disponible.");
+                    throw new IllegalArgumentException("Actividad no disponible.");
                 }
 
-                // 2) Manejamos el duplicado
+                // 2) Duplicado
                 if (RESERVA_DAO.yaReservado(cn, userId, actividadId)) {
-                    throw new IllegalArgumentException("Ya reservaste este taller.");
+                    throw new IllegalArgumentException("Ya tienes esta actividad en tu agenda.");
                 }
 
-                // 3) Cupo
-                Integer cupoMax = a.getCupoMaximo(); // Debe existir por regla de negocio
-                if (cupoMax == null || cupoMax <= 0) {
-                    throw new IllegalArgumentException("Este taller no tiene cupo configurado.");
-                }
-                int ocupados = RESERVA_DAO.contarReservas(cn, actividadId);
-                if (ocupados >= cupoMax) {
-                    throw new IllegalArgumentException("Cupo lleno, ya no hay espacios.");
+                // 3) Reglas por tipo
+                if ("TALLER".equals(a.getTipoActividad())) {
+                    Integer cupoMax = a.getCupoMaximo();
+                    if (cupoMax == null || cupoMax <= 0) {
+                        throw new IllegalArgumentException("Este taller no tiene cupo configurado.");
+                    }
+                    int ocupados = RESERVA_DAO.contarReservas(cn, actividadId);
+                    if (ocupados >= cupoMax) {
+                        throw new IllegalArgumentException("Cupo lleno, ya no hay espacios.");
+                    }
+                } else if (!"PONENCIA".equals(a.getTipoActividad())) {
+                    throw new IllegalArgumentException("Tipo de actividad inválido.");
                 }
 
-                // 4) Manejamos crear reserva
+                // 4) Crear reserva para ambos casos
                 int id = RESERVA_DAO.crearReserva(cn, userId, actividadId);
                 if (id == 0) {
                     throw new IllegalStateException("No se pudo registrar la reserva.");

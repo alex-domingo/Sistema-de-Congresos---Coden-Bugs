@@ -5,12 +5,12 @@
 %>
 <!DOCTYPE html>
 <html lang="es">
-    <head><meta charset="UTF-8"><title>Mis reservas</title></head>
+    <head><meta charset="UTF-8"><title>Todas mis reservas</title></head>
     <body>
-        <h2>Mis reservas</h2>
+        <h2>Todas mis reservas</h2>
         <p>
             <a href="<%=request.getContextPath()%>/participante/dashboard">← Volver</a> |
-            <a href="<%=request.getContextPath()%>/participante/talleres">Explorar talleres</a>
+            <a href="<%=request.getContextPath()%>/participante/talleres">Explorar talleres y ponencias</a>
         </p>
 
         <ul>
