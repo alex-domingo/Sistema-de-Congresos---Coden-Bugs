@@ -31,6 +31,7 @@ com\codenbugs\sistemacongresos\dao\AdministradorInstitucionDAO.class
 com\codenbugs\sistemacongresos\controladores\congresos\CambiarEstadoCongresoServlet.class
 com\codenbugs\sistemacongresos\servicios\CongresoServicio.class
 com\codenbugs\sistemacongresos\dao\CongresoDAO.class
+com\codenbugs\sistemacongresos\util\PasswordUtil.class
 com\codenbugs\sistemacongresos\servicios\SalonServicio.class
 com\codenbugs\sistemacongresos\controladores\ParticipanteDashboardServlet.class
 com\codenbugs\sistemacongresos\servicios\InstitucionServicio.class
@@ -39,6 +40,7 @@ com\codenbugs\sistemacongresos\controladores\participante\InscribirseCongresoSer
 com\codenbugs\sistemacongresos\modelos\Institucion.class
 com\codenbugs\sistemacongresos\dao\ActividadPublicaDAO.class
 com\codenbugs\sistemacongresos\dao\UsuarioDAO.class
+com\codenbugs\sistemacongresos\controladores\auth\RegistroUsuarioServlet.class
 com\codenbugs\sistemacongresos\controladores\participante\MisReservasTallerServlet.class
 com\codenbugs\sistemacongresos\controladores\OrganizadorDashboardServlet.class
 com\codenbugs\sistemacongresos\dao\ReservaActividadDAO.class

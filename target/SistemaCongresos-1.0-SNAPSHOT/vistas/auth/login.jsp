@@ -24,6 +24,7 @@
                 <input type="password" name="password" required />
             </div>
             <button type="submit">Entrar</button>
+            <p>¿No tienes cuenta? <a href="<%=request.getContextPath()%>/auth/registro">Crear cuenta</a></p>
         </form>
 
     </body>
