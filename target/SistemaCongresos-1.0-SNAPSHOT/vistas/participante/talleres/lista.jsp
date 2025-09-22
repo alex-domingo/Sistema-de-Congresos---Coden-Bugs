@@ -35,7 +35,8 @@
             </form>
         </div>
         <% } } else { %>
-        <p>No hay actividades disponibles por el momento.</p>
+        <p>No hay actividades disponibles. Para ver talleres y ponencias debes estar inscrito en un congreso.</p>
+        <p><a href="<%=request.getContextPath()%>/participante/congresos">Explorar congresos</a></p>
         <% } %>
     </body>
 </html>
