@@ -10,6 +10,7 @@ C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\cod
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\servicios\InstitucionServicio.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\dao\AdministradorInstitucionDAO.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\JakartaRestConfiguration.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\auth\RegistroUsuarioServlet.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\modelos\Salon.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\resources\JakartaEE10Resource.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\dao\ReservaActividadDAO.java
@@ -23,6 +24,7 @@ C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\cod
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\instituciones\ListarInstitucionesServlet.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\salones\ListarSalonesServlet.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\SistemaCongresos.java
+C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\util\PasswordUtil.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\servicios\UsuarioServicio.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\servicios\ReservaTallerServicio.java
 C:\Users\Ludvi\Documents\netbeansprojects\SistemaCongresos\src\main\java\com\codenbugs\sistemacongresos\controladores\congresos\CrearCongresoServlet.java
