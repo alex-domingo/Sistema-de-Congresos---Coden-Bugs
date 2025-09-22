@@ -47,6 +47,25 @@ public class ActividadPublicaDAO {
         }
     }
 
+    public List<Actividad> listarActividadesDisponiblesParaUsuario(int userId) throws Exception {
+        String sql = "SELECT a.* "
+                + "FROM actividades a "
+                + "JOIN congresos c ON c.id = a.congreso_id "
+                + "JOIN participantes_congresos pc ON pc.congreso_id = a.congreso_id "
+                + "WHERE c.activo = TRUE AND pc.usuario_id = ? AND pc.pago_realizado = TRUE "
+                + "ORDER BY a.fecha_hora_inicio ASC";
+        try (Connection cn = DB.getConnection(); PreparedStatement ps = cn.prepareStatement(sql)) {
+            ps.setInt(1, userId);
+            try (ResultSet rs = ps.executeQuery()) {
+                List<Actividad> out = new ArrayList<>();
+                while (rs.next()) {
+                    out.add(map(rs));
+                }
+                return out;
+            }
+        }
+    }
+
     /*
     Obtenemos una actividad (sea taller o ponencia) si su congreso está activo
      */

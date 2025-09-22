@@ -20,8 +20,15 @@ public class ListarTalleresServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        var u = (com.codenbugs.sistemacongresos.modelos.Usuario) req.getSession().getAttribute("usuario");
+        if (u == null) {
+            resp.sendRedirect(req.getContextPath() + "/auth/login");
+            return;
+        }
+
         try {
-            req.setAttribute("actividades", actividadDAO.listarActividadesDisponibles());
+            var actividades = actividadDAO.listarActividadesDisponiblesParaUsuario(u.getId());
+            req.setAttribute("actividades", actividades);
             req.getRequestDispatcher("/vistas/participante/talleres/lista.jsp").forward(req, resp);
         } catch (Exception e) {
             throw new ServletException("Error listando actividades", e);

@@ -85,4 +85,16 @@ public class ReservaActividadDAO {
             }
         }
     }
+
+    public boolean usuarioInscritoEnCongreso(Connection cn, int userId, int congresoId) throws Exception {
+        String sql = "SELECT 1 FROM participantes_congresos "
+                + "WHERE usuario_id = ? AND congreso_id = ? AND pago_realizado = TRUE LIMIT 1";
+        try (PreparedStatement ps = cn.prepareStatement(sql)) {
+            ps.setInt(1, userId);
+            ps.setInt(2, congresoId);
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next();
+            }
+        }
+    }
 }

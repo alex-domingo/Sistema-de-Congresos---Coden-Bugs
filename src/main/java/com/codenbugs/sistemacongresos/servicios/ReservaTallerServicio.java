@@ -33,12 +33,17 @@ public class ReservaTallerServicio {
                     throw new IllegalArgumentException("Actividad no disponible.");
                 }
 
-                // 2) Duplicado
+                // 2) El usuario debe estar inscrito (pagado) en el congreso de la actividad
+                if (!RESERVA_DAO.usuarioInscritoEnCongreso(cn, userId, a.getCongresoId())) {
+                    throw new IllegalArgumentException("Debes estar inscrito en el congreso para ver/reservar sus actividades.");
+                }
+
+                // 3) Duplicado
                 if (RESERVA_DAO.yaReservado(cn, userId, actividadId)) {
                     throw new IllegalArgumentException("Ya tienes esta actividad en tu agenda.");
                 }
 
-                // 3) Reglas por tipo
+                // 4) Reglas por tipo
                 if ("TALLER".equals(a.getTipoActividad())) {
                     Integer cupoMax = a.getCupoMaximo();
                     if (cupoMax == null || cupoMax <= 0) {
