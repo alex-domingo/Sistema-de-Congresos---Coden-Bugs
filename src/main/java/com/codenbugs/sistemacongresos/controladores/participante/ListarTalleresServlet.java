@@ -21,10 +21,10 @@ public class ListarTalleresServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            req.setAttribute("talleres", actividadDAO.listarTalleresDisponibles());
+            req.setAttribute("actividades", actividadDAO.listarActividadesDisponibles());
             req.getRequestDispatcher("/vistas/participante/talleres/lista.jsp").forward(req, resp);
         } catch (Exception e) {
-            throw new ServletException("Error listando talleres", e);
+            throw new ServletException("Error listando actividades", e);
         }
     }
 }
