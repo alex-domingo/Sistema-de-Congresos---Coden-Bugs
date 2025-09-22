@@ -14,6 +14,8 @@ com\codenbugs\sistemacongresos\JakartaRestConfiguration.class
 com\codenbugs\sistemacongresos\SistemaCongresos.class
 com\codenbugs\sistemacongresos\controladores\instituciones\ListarInstitucionesServlet.class
 com\codenbugs\sistemacongresos\controladores\participante\ListarTalleresServlet.class
+com\codenbugs\sistemacongresos\servicios\RecargaCarteraServicio.class
+com\codenbugs\sistemacongresos\controladores\participante\RecargarCarteraServlet.class
 com\codenbugs\sistemacongresos\modelos\Actividad.class
 com\codenbugs\sistemacongresos\filtros\AuthFilter.class
 com\codenbugs\sistemacongresos\controladores\actividades\EditarActividadServlet.class
