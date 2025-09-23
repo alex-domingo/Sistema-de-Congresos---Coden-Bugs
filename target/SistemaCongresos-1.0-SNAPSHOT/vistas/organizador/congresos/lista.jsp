@@ -8,40 +8,95 @@
     <head>
         <meta charset="UTF-8">
         <title>Mis Congresos</title>
-        <link rel="stylesheet" href="<%=request.getContextPath()%>/recursos/css/estilos.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/recursos/css/bootstrap.min.css">
     </head>
-    <body>
-        <h2>Mis Congresos</h2>
-        <p><a href="<%=request.getContextPath()%>/organizador/dashboard">← Volver</a></p>
-        <p><a href="<%=request.getContextPath()%>/organizador/congresos/crear">+ Nuevo congreso</a></p>
+    <body class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="<%=request.getContextPath()%>/">SistemaCongresos</a>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="<%=request.getContextPath()%>/organizador/dashboard">← Volver al Dashboard</a>
+                </div>
+            </div>
+        </nav>
 
-        <table border="1" cellpadding="6" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>ID</th><th>Título</th><th>Fechas</th><th>Precio (GTQ)</th><th>Ubicación</th><th>Activo</th><th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% if (congresos != null) { for (Congreso c : congresos) { %>
-                <tr>
-                    <td><%=c.getId()%></td>
-                    <td><%=c.getTitulo()%></td>
-                    <td><%=c.getFechaInicio()%> → <%=c.getFechaFin()%></td>
-                    <td><%=c.getPrecio()%></td>
-                    <td><%=c.getUbicacion()%></td>
-                    <td><%=c.getActivo() ? "Sí" : "No"%></td>
-                    <td>
-                        <a href="<%=request.getContextPath()%>/organizador/congresos/editar?id=<%=c.getId()%>">Editar</a>
-                        |
-                        <form action="<%=request.getContextPath()%>/organizador/congresos/estado" method="post" style="display:inline">
-                            <input type="hidden" name="id" value="<%=c.getId()%>"/>
-                            <input type="hidden" name="activo" value="<%= !c.getActivo() %>"/>
-                            <button type="submit"><%= c.getActivo() ? "Desactivar" : "Activar" %></button>
-                        </form>
-                    </td>
-                </tr>
-                <% } } %>
-            </tbody>
-        </table>
+        <main class="container py-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Mis Congresos</h2>
+                <a href="<%=request.getContextPath()%>/organizador/congresos/crear" class="btn btn-primary">+ Nuevo congreso</a>
+            </div>
+
+            <% if (congresos != null && !congresos.isEmpty()) { %>
+            <div class="card shadow-sm">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Título</th>
+                                    <th>Fechas</th>
+                                    <th>Precio (GTQ)</th>
+                                    <th>Ubicación</th>
+                                    <th>Activo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for (Congreso c : congresos) { %>
+                                <tr>
+                                    <td><strong>#<%=c.getId()%></strong></td>
+                                    <td><strong><%=c.getTitulo()%></strong></td>
+                                    <td><%=c.getFechaInicio()%> → <%=c.getFechaFin()%></td>
+                                    <td>Q<%=c.getPrecio()%></td>
+                                    <td><%=c.getUbicacion()%></td>
+                                    <td>
+                                        <% if (c.getActivo()) { %>
+                                        <span class="badge bg-success">Sí</span>
+                                        <% } else { %>
+                                        <span class="badge bg-secondary">No</span>
+                                        <% } %>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <a href="<%=request.getContextPath()%>/organizador/congresos/editar?id=<%=c.getId()%>" 
+                                               class="btn btn-outline-primary">Editar</a>
+                                            <form action="<%=request.getContextPath()%>/organizador/congresos/estado" method="post" 
+                                                  class="d-inline" onsubmit="return confirm('¿Estás seguro de <%= c.getActivo() ? "desactivar" : "activar" %> este congreso?')">
+                                                <input type="hidden" name="id" value="<%=c.getId()%>"/>
+                                                <input type="hidden" name="activo" value="<%= !c.getActivo() %>"/>
+                                                <button type="submit" class="btn <%= c.getActivo() ? "btn-outline-warning" : "btn-outline-success" %>">
+                                                    <%= c.getActivo() ? "Desactivar" : "Activar" %>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <% } else { %>
+            <div class="text-center py-5">
+                <div class="card shadow-sm">
+                    <div class="card-body py-5">
+                        <h5 class="text-muted">No hay congresos creados</h5>
+                        <p class="text-muted">Comienza creando tu primer congreso.</p>
+                        <a href="<%=request.getContextPath()%>/organizador/congresos/crear" class="btn btn-primary">Crear primer congreso</a>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </main>
+
+        <footer class="border-top py-3 mt-4">
+            <div class="container text-center text-muted small">
+                © <%= java.time.Year.now() %> SistemaCongresos · Desarrollado por Alex Domingo
+            </div>
+        </footer>
+
+        <script src="<%=request.getContextPath()%>/recursos/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
